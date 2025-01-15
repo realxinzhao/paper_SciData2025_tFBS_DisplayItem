@@ -13,22 +13,23 @@ Affiliations
 3. Basque Centre for Climate Change (BC3), Scientific Campus of the University of the Basque Country, Leioa, Spain
 4. Biodiversity and Natural Resources (BNR) Program, International Institute for Applied Systems Analysis (IIASA), Schlossplatz 1, 2361 Laxenburg, Austria
 
-corresponding author: Xin Zhao (xin.zhao@pnnl.gov)
+**corresponding author: Xin Zhao (xin.zhao@pnnl.gov)**
 
 # Instruction
 * The repo is developed based on (forked from) the 'gcamfaostat v1.1.0-gamma` ([https://github.com/JGCRI/gcamfaostat/releases/tag/v1.1.0-gamma].
 * The new R scripts for generated figures and tables used in the paper are included in `data-raw/SciData`
 
-To replicate the outcomes, users just need to run `SciData2025_Step0_LoadFuncData.R` as it includes all the procedures, such as
+To replicate the outcomes, users just need to run `SciData2025_Step0_LoadFuncData.R` as it includes calls to all the procedures needed. E.g.,
 
 ## Package building and data generating
 ```
+# load gcamfaostat v1.1.0
 devtools::load_all()
 driver_drake(write_csv_model = "Traceable_FBS")
 ```
 ## Package building and data generating
 ```
-sourcing other visualization code by steps:
+# sourcing other visualization code by steps:
 source("data-raw/SciData/SciData2025_Step1_SUABalance.R")
 source("data-raw/SciData/SciData2025_Step2_BalanceCheck.R")
 source("data-raw/SciData/SciData2025_Step3_CalorieMacroutrient.R")
