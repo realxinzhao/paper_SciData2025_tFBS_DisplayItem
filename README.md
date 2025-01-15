@@ -27,11 +27,13 @@ devtools::load_all()
 driver_drake(write_csv_model = "Traceable_FBS")
 ```
 ## Package building and data generating
+```
 sourcing other visualization code by steps:
 source("data-raw/SciData/SciData2025_Step1_SUABalance.R")
 source("data-raw/SciData/SciData2025_Step2_BalanceCheck.R")
 source("data-raw/SciData/SciData2025_Step3_CalorieMacroutrient.R")
 source("data-raw/SciData/SciData2025_Step4_CompareFAO_CalorieMacronutrient.R")
+```
 
 ## Output files are stored in `output/gcamfaostat_SciData` along with T-FBS files (`output/gcamfaostat_Traceable_FBS`)
 
