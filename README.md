@@ -1,3 +1,46 @@
+# Overview
+
+This repository includes an R project (R codes, functions, and data) for generating key figures in the paper:
+
+**Traceable and Scalable Food Balance Sheets from Agricultural Commodity Supply and Utilization Accounts (2010-2022)**  
+
+
+Xin Zhao<sup>1</sup>, Maksym Chepeliev<sup>2</sup>, Neus Escobar<sup>3,4</sup>, Matthew T. Binsted<sup>1</sup>, Pralit Patel<sup>1</sup>, Page Kyle<sup>1</sup>, Marshall A. Wise<sup>1</sup>
+
+Affiliations
+1. Joint Global Change Research Institute, Pacific Northwest National Laboratory, 5825 University Research Ct, College Park, MD 20740, USA
+2. Center for Global Trade Analysis, Department of Agricultural Economics, Purdue University, 403 Mitch Daniels Blvd, West Lafayette, IN 47906, USA
+3. Basque Centre for Climate Change (BC3), Scientific Campus of the University of the Basque Country, Leioa, Spain
+4. Biodiversity and Natural Resources (BNR) Program, International Institute for Applied Systems Analysis (IIASA), Schlossplatz 1, 2361 Laxenburg, Austria
+
+corresponding author: Xin Zhao (xin.zhao@pnnl.gov)
+
+# Instruction
+* The repo is developed based on (forked from) the 'gcamfaostat v1.1.0-gamma` ([https://github.com/JGCRI/gcamfaostat/releases/tag/v1.1.0-gamma].
+* The new R scripts for generated figures and tables used in the paper are included in `data-raw/SciData`
+
+To replicate the outcomes, users just need to run `SciData2025_Step0_LoadFuncData.R` as it includes all the procedures, such as
+
+## Package building and data generating
+```
+devtools::load_all()
+driver_drake(write_csv_model = "Traceable_FBS")
+```
+## Package building and data generating
+sourcing other visualization code by steps:
+source("data-raw/SciData/SciData2025_Step1_SUABalance.R")
+source("data-raw/SciData/SciData2025_Step2_BalanceCheck.R")
+source("data-raw/SciData/SciData2025_Step3_CalorieMacroutrient.R")
+source("data-raw/SciData/SciData2025_Step4_CompareFAO_CalorieMacronutrient.R")
+
+## Output files are stored in `output/gcamfaostat_SciData` along with T-FBS files (`output/gcamfaostat_Traceable_FBS`)
+
+Some of the visualization functions and results will be added to gcamfaostat website later.
+
+
+--------------------------------------------
+Original package readme
+--------------------------------------------
 <!-- badges: start -->
 [![pages-build-deployment](https://github.com/JGCRI/gcamfaostat/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/JGCRI/gcamfaostat/actions/workflows/pages/pages-build-deployment)
 [![docs](https://github.com/JGCRI/gcamfaostat/actions/workflows/docs.yaml/badge.svg)](https://github.com/JGCRI/gcamfaostat/actions/workflows/docs.yaml)
